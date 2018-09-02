@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import BookShelf from './shelf';
 
+import BookShelf from './shelf';
 
 class ListBooks extends Component{
     render(){
@@ -17,7 +17,7 @@ class ListBooks extends Component{
                 value: 'read',
                 title: 'Read'
             }
-        ]
+        ];
         const {books, changeShelf} = this.props
         return (
             <div className="list-books-content">
@@ -27,7 +27,7 @@ class ListBooks extends Component{
                                             books={books}
                                             changeShelf={changeShelf}/>)}
             </div>
-        )
+        );
     };
 };
 

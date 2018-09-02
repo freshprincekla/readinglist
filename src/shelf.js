@@ -4,7 +4,7 @@ import Book from './book';
 
 class BookShelf extends Component{
     render () {
-        const {books, catergory, changeShelf} = this.props
+        const {books, catergory, changeShelf} = this.props;
         return(
             <div className="bookshelf">
                 <h2 className="bookshelf-title">{catergory.title}</h2>
@@ -19,14 +19,14 @@ class BookShelf extends Component{
                                             book={book} 
                                             changeShelf={changeShelf}/>
                                     );
-                                }return false
+                                }return false;
                             })
                         }
                     </ol>
                 </div>
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
 export default BookShelf;

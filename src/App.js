@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, BrowserRouter, Switch , Link} from 'react-router-dom';
-import * as BooksAPI from './BooksAPI';
 
 import './App.css';
 
+import * as BooksAPI from './BooksAPI';
 import Search from './search';
 import ListBooks from './listBooks';
 
@@ -14,8 +14,8 @@ class BooksApp extends React.Component {
       this.state = {
         books: []
       };
-      this.changeShelf = this.changeShelf.bind(this)
-  }
+      this.changeShelf = this.changeShelf.bind(this);
+  };
   
   componentDidMount(){
     BooksAPI.getAll().then(books => {
@@ -26,7 +26,6 @@ class BooksApp extends React.Component {
   changeShelf(nbook, shelf){
     BooksAPI.update(nbook, shelf).then(res => {
       nbook.shelf = shelf;
-      //console.log(this.state)
       let books = this.state.books.filter( bookitem => bookitem.id !== nbook.id)
       books.push(nbook)
       this.setState({books})
