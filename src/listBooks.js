@@ -18,10 +18,14 @@ class ListBooks extends Component{
                 title: 'Read'
             }
         ]
-        const {books} = this.props
+        const {books, changeShelf} = this.props
         return (
             <div className="list-books-content">
-                {shelves.map((shelf) => <BookShelf key={shelf.value} catergory={shelf} books={books}/>)}
+                {shelves.map((shelf) => <BookShelf 
+                                            key={shelf.value} 
+                                            catergory={shelf} 
+                                            books={books}
+                                            changeShelf={changeShelf}/>)}
             </div>
         )
     };
