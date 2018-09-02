@@ -1,9 +1,27 @@
 import React, { Component } from 'react';
 
+import Book from './book';
+
 class BookShelf extends Component{
     render () {
+        const {books, catergory} = this.props
         return(
-            <div></div>
+            <div className="bookshelf">
+                <h2 className="bookshelf-title">{catergory.title}</h2>
+                <div className="bookshelf-books">
+                    <ol className="books-grid">
+                        {
+                            books.map( book =>{
+                                if(book.shelf === catergory.value){
+                                    return(
+                                        <Book key={book.id} book={book}/>
+                                    );
+                                }return false
+                            })
+                        }
+                    </ol>
+                </div>
+            </div>
         )
     }
 }
