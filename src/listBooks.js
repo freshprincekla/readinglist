@@ -4,6 +4,7 @@ import BookShelf from './shelf';
 
 class ListBooks extends Component{
     render(){
+        // the various shelves and their value
         const shelves = [
             {
                 value: 'currentlyReading', 

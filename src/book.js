@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 class Book extends Component{
     constructor(props){
         super(props);
+        //bind the changeShelf function
         this.changeShelf = this.changeShelf.bind(this);
     };
     changeShelf(event){
+        // function to check if shelf is different from current
         const { book } = this.props;
         if(book.shelf !== event.target.value){
             this.props.changeShelf(book,event.target.value);

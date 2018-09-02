@@ -10,10 +10,12 @@ import ListBooks from './listBooks';
 
 class BooksApp extends React.Component {
   constructor(props){
+    // set the intial state
     super(props);
       this.state = {
         books: []
       };
+      // bind the changeShelf function
       this.changeShelf = this.changeShelf.bind(this);
   };
   
@@ -24,6 +26,7 @@ class BooksApp extends React.Component {
   };
 
   changeShelf(nbook, shelf){
+    // function to update the shelf of the book
     BooksAPI.update(nbook, shelf).then(res => {
       nbook.shelf = shelf;
       let books = this.state.books.filter( bookitem => bookitem.id !== nbook.id)
