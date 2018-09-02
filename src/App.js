@@ -52,7 +52,7 @@ class BooksApp extends React.Component {
                 </div>
               </div>
             )} />
-            <Route path="/search" component={Search}/>
+            <Route path="/search" render={()=> <Search changeShelf ={this.changeShelf}/>}/>
           </Switch>
         </BrowserRouter>
       </div>
