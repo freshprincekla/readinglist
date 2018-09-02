@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import BookShelf from './shelf';
 
 
 class ListBooks extends Component{
@@ -21,23 +21,7 @@ class ListBooks extends Component{
         const {books} = this.props
         return (
             <div className="list-books-content">
-                {
-                    shelves.map((shelf) => {
-                        books.map(book=> {
-                            if(shelf.value === book.shelf){
-                                console.log(book.title)
-                                console.log(book.shelf)
-                                return(
-                                    <div>
-                                        book.title
-                                        book.shelf
-                                    </div>
-                                )
-                            }
-                        })
-                        
-                    })
-                }
+                {shelves.map((shelf) => <BookShelf key={shelf.value} catergory={shelf} books={books}/>)}
             </div>
         )
     };
