@@ -11,10 +11,9 @@ class Search extends Component{
             books: [],
             message: "Please search a valid search term."
         };
-        this.searchTerms = this.searchTerms.bind(this)
-    }
+        this.searchTerms = this.searchTerms.bind(this);
+    };
     
-
     searchTerms(event){
         if(event.target.value){
             BooksAPI.search(event.target.value.trim()).then(books=>{
@@ -22,17 +21,17 @@ class Search extends Component{
                     this.setState({
                         books:[],
                         message: "Oops not found"
-                    })
-                }
+                    });
+                };
                 if(books.length > 0){
                     this.setState({
                         books,
                         message:""
-                    })
-                }
-            })
-        }
-    }
+                    });
+                };
+            });
+        };
+    };
 
     render(){
         return(
@@ -52,16 +51,15 @@ class Search extends Component{
                                     key={book.id} 
                                     book={book} 
                                     changeShelf={null}/>
-                            )
-                            
+                            );
                         })
                     }
                     {this.state.message}
                 </ol>
             </div>
           </div>
-        )
-    }
-}
+        );
+    };
+};
 
 export default Search;

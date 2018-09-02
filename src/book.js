@@ -13,7 +13,7 @@ class Book extends Component{
     };
 
     render(){
-        const { book } = this.props
+        const { book } = this.props;
         return(
             <li>
                 <div className="book">
